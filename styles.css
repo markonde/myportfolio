@@ -1,0 +1,438 @@
+:root {
+  --primary: #7f5af0;
+  --accent: #2cb67d;
+  --background: #f4f4f8;
+  --background-dark: #16161a;
+  --surface: rgba(255,255,255,0.15);
+  --surface-dark: rgba(35,41,70,0.8);
+  --text: #232946;
+  --text-light: #eaeaea;
+  --glass-blur: 18px;
+  --transition: 0.3s cubic-bezier(.4,0,.2,1);
+  --font-main: 'Montserrat', sans-serif;
+}
+[data-theme="dark"] {
+  --background: var(--background-dark);
+  --surface: var(--surface-dark);
+  --text: #eaeaea;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--background);
+  color: var(--text);
+  margin: 0;
+  min-height: 100vh;
+  transition: background var(--transition), color var(--transition);
+}
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 6vw;
+  background: var(--surface);
+  backdrop-filter: blur(var(--glass-blur));
+  border-radius: 0 0 24px 24px;
+  z-index: 100;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.07);
+}
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+.navbar ul {
+  display: flex;
+  gap: 2em;
+  list-style: none;
+  margin: 0;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.25s;
+}
+.navbar ul li a:hover {
+  color: var(--primary);
+}
+#theme-toggle {
+  cursor: pointer;
+  font-size: 1.3em;
+  color: var(--primary);
+  background: none;
+  border: none;
+  padding: 0.2em 0.5em;
+  border-radius: 1em;
+  margin-left: 1.2em;
+  transition: background 0.2s;
+}
+#theme-toggle:hover { background: var(--primary); color: #fff; }
+
+/* Sections */
+section {
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  padding: 6rem 2rem 2rem 2rem;
+}
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  min-height: 65vh;
+  justify-content: center;
+}
+.glass {
+  background: var(--surface);
+  border-radius: 32px;
+  box-shadow: 0 6px 32px rgba(127, 90, 240, 0.08), 0 1.5px 10px rgba(0,0,0,0.03);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.hero-section .profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  object-fit: cover;
+  box-shadow: 0 4px 25px rgba(127,90,240,0.15);
+}
+.hero-content h1 {
+  font-size: 2.6em;
+  font-weight: 700;
+  margin-bottom: 0.4em;
+}
+.hero-content h2 {
+  font-size: 1.4em;
+  color: var(--primary);
+  min-height: 2.2em;
+  font-weight: 600;
+  margin-bottom: 0.6em;
+  letter-spacing: 1.5px;
+}
+.hero-cta {
+  display: flex;
+  gap: 1.3em;
+  flex-wrap: wrap;
+  margin-bottom: 0.6em;
+}
+.btn {
+  padding: 0.75em 2em;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 2em;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 1em;
+  box-shadow: 0 6px 24px rgba(127, 90, 240, 0.09);
+  transition: background var(--transition), transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.btn i {
+  margin-right: 0.35em;
+}
+.btn:hover {
+  background: var(--accent);
+  transform: translateY(-2px) scale(1.03);
+}
+.secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.secondary:hover { background: var(--primary); color: #fff; }
+
+.resume-caption {
+  margin: 0.6em 0 0 0;
+  font-size: 1em;
+  color: #8e8ea6;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.resume-caption i {
+  color: var(--primary);
+  font-size: 1em;
+}
+
+.about-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+.about-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  margin-top: 1.3em;
+  font-size: 2.7em;
+  color: var(--primary);
+}
+.about-icons i { transition: transform 0.18s; }
+.about-icons i:hover { transform: scale(1.2) rotate(-5deg); }
+
+.projects-section .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 2em;
+  margin-top: 2em;
+}
+.project-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.13s, box-shadow 0.2s;
+  position: relative;
+  opacity: 0;
+  transform: translateY(36px) scale(0.97);
+  transition: opacity 0.8s cubic-bezier(.7,0,.3,1), transform 0.7s cubic-bezier(.7,0,.3,1);
+}
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.project-card img {
+  width: 100%; height: 140px;
+  object-fit: cover;
+}
+.project-card h3 {
+  font-size: 1.3em;
+  margin: 1em 0 0.4em 1em;
+}
+.project-card p {
+  font-size: 1em;
+  margin: 0 1em 0.7em 1em;
+  color: #6a6a8e;
+}
+.project-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  font-size: 0.95em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+.project-tools span {
+  background: var(--surface);
+  padding: 0.2em 0.8em;
+  border-radius: 1em;
+  color: var(--primary);
+  font-weight: 600;
+  margin-right: 0.3em;
+  box-shadow: 0 1.5px 8px rgba(127,90,240,0.08);
+}
+.project-actions {
+  display: flex;
+  gap: 0.7em;
+  margin: 0 0 1em 1em;
+}
+.project-actions .btn { margin-top: 0; font-size: 0.98em; padding: 0.5em 1.5em; }
+
+/* Glassmorphism Technologies Section */
+.glass-tech-section {
+  margin: 4rem auto 0;
+  padding: 3rem 2rem 2.5rem 2rem;
+  max-width: 950px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
+  backdrop-filter: blur(18px);
+  border: 1.5px solid rgba(255,255,255,0.22);
+  text-align: center;
+  position: relative;
+}
+[data-theme="dark"] .glass-tech-section {
+  background: rgba(35, 41, 70, 0.67);
+  border-color: rgba(44, 182, 125, 0.17);
+}
+.glass-tech-section h2 {
+  font-size: 2.2em;
+  color: var(--primary, #7f5af0);
+  margin-bottom: 2.3rem;
+  letter-spacing: 1.2px;
+  font-weight: 800;
+}
+.glass-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 2rem;
+}
+.glass-tech-card {
+  background: rgba(255,255,255,0.18);
+  border-radius: 20px;
+  box-shadow: 0 2px 20px 0 rgba(127, 90, 240, 0.10);
+  backdrop-filter: blur(12px);
+  border: 1.2px solid rgba(255,255,255,0.25);
+  padding: 2.2rem 1.3rem 1.4rem 1.3rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s, box-shadow 0.24s;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(36px) scale(0.97);
+  transition: opacity 0.8s cubic-bezier(.7,0,.3,1), transform 0.7s cubic-bezier(.7,0,.3,1);
+}
+.glass-tech-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+[data-theme="dark"] .glass-tech-card {
+  background: rgba(35, 41, 70, 0.72);
+  border-color: rgba(127, 90, 240, 0.16);
+}
+.glass-tech-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 36px 0 rgba(127,90,240,0.19);
+}
+.tech-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8em;
+  margin-bottom: 1.0em;
+  border-radius: 50%;
+  padding: 0.37em;
+  background: linear-gradient(135deg, rgba(127,90,240,0.09) 60%, rgba(44,182,125,0.04) 100%);
+  box-shadow: 0 1.5px 14px 0 rgba(127,90,240,0.13);
+  border: 1.5px solid rgba(127,90,240,0.13);
+  color: #fff;
+}
+.tech-icon.html { color: #e44d26; background:rgba(228,77,38,0.09);}
+.tech-icon.css { color: #1572b6; background:rgba(21,114,182,0.09);}
+.tech-icon.js { color: #f7df1e; background:rgba(247,223,30,0.09);}
+.tech-icon.github { color: #24292e; background:rgba(36,41,46,0.09);}
+.tech-icon.figma { color: #a259ff; background:rgba(162,89,255,0.09);}
+
+.glass-tech-card h3 {
+  font-size: 1.18em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  color: var(--primary, #7f5af0);
+}
+.glass-tech-card p {
+  color: #232946cc;
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.contact-section form {
+  background: var(--surface);
+  max-width: 440px;
+  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 2px 18px rgba(127,90,240,0.08);
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.contact-section input, .contact-section textarea {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 0.7em;
+  padding: 1em;
+  font-size: 1em;
+  background: transparent;
+  color: var(--text);
+  transition: border var(--transition);
+}
+.contact-section input:focus, .contact-section textarea:focus {
+  border: 1.5px solid var(--primary);
+  outline: none;
+}
+.contact-section button {
+  margin: 0.7em 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.contact-info {
+  text-align: center;
+  margin-top: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+.contact-info a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 1.1em;
+}
+.contact-info a:hover { text-decoration: underline; }
+
+footer {
+  text-align: center;
+  font-size: 1em;
+  color: #9a9abf;
+  background: none;
+  padding: 1.8em 0 1em 0;
+}
+.heart { color: #ff4b7b; }
+
+/* Modal Live Demo Prompt */
+.modal-prompt {
+  display: none;
+  position: fixed;
+  z-index: 5000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.36);
+  align-items: center;
+  justify-content: center;
+}
+.modal-prompt.active { display: flex; }
+.modal-prompt .modal-content {
+  position: relative;
+  background: rgba(255,255,255,0.19);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(127,90,240,0.11);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(127,90,240,0.11);
+  padding: 2.2em 1.7em 1.7em 1.7em;
+  text-align: center;
+  max-width: 90vw;
+  min-width: 270px;
+}
+.modal-prompt .close-modal {
+  position: absolute;
+  top: 1em; right: 1.4em;
+  font-size: 2em;
+  color: var(--primary, #7f5af0);
+  cursor: pointer;
+}
+.modal-actions {
+  margin-top: 1.6em;
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.2rem;
+  }
+  .navbar { padding: 18px 2vw; }
+  section { padding: 6rem 1rem 2rem 1rem; }
+}
+@media (max-width: 600px) {
+  .projects-grid,
+  .glass-tech-grid {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  .hero-section .profile-img { width: 95px; height: 95px; }
+  section { padding: 4.5rem 0.2rem 1.5rem 0.2rem; }
+}

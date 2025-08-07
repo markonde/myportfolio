@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mark Onde - Creative Web Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">Mark Onde</div>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#technologies">Technologies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="glass hero-section">
+    <img src="profile.png" alt="Profile photo" class="profile-img" />
+    <div class="hero-content">
+      <h1>Hi, I'm Mark Onde</h1>
+      <h2><span id="animated-job"></span></h2>
+      <p>Building creative, modern, and interactive web experiences.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="#contact" class="btn secondary">Contact</a>
+        <a href="Mark-Onde-Resume.pdf" class="btn resume-btn" download>
+          <i class="fas fa-download"></i> Download Resume
+        </a>
+      </div>
+      <p class="resume-caption">
+        <i class="fas fa-info-circle"></i> To know more my previous work experience just download my resume!
+      </p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="glass about-section">
+    <h2>About Me</h2>
+    <p>
+      I’m a passionate <b>Junior Web Developer</b> skilled in <b>HTML, CSS, and JavaScript</b>. I love crafting unique UIs, learning new trends, and collaborating with creative teams.<br>
+      <b>Soft skills:</b> Teamwork, Curiosity, Problem-solving, Adaptability.
+    </p>
+    <div class="about-icons">
+      <i class="fab fa-html5" title="HTML5"></i>
+      <i class="fab fa-css3-alt" title="CSS3"></i>
+      <i class="fab fa-js-square" title="JavaScript"></i>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="glass projects-section">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="glass project-card">
+        <img src="project1.jpg" alt="Project 1">
+        <h3>Luxury Cars Landing Page</h3>
+        <p>This is a sleek landing page for LuxuryCars, designed to reflect a premium brand image.
+         It features a bold headline, clean branding, and a clear call-to-action button, all set against a dark, modern background to attract and engage high-end car buyers..</p>
+        <div class="project-tools">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+        <div class="project-actions">
+          <a href="#" class="btn live-demo-btn" data-demo="https://markonde.github.io/carsproject5/">Live Demo</a>
+          <a href="https://markonde.github.io/carsproject5/" class="btn secondary" target="_blank">Code</a>
+        </div>
+      </div>
+      <div class="glass project-card">
+        <img src="project2.jpg" alt="Project 2">
+        <h3>Analytics Dashboard</h3>
+        <p>This is a Creative Analytics Dashboard designed to monitor weekly sales performance. It features key metrics like Total Sales, Active Users,
+        and Revenue.The layout is clean and user-friendly, with options to filter data type and time range for flexible insights..</p>
+        <div class="project-tools">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+        <div class="project-actions">
+          <a href="#" class="btn live-demo-btn" data-demo="https://markonde.github.io/Dashboard/">Live Demo</a>
+          <a href="https://markonde.github.io/Dashboard/" class="btn secondary" target="_blank">Code</a>
+        </div>
+      </div>
+      <div class="glass project-card">
+        <img src="project3.jpg" alt="Project 3">
+        <h3>Responsive Food Service Web App</h3>
+        <p>A modern, responsive one-page website for a local fried chicken business. It showcases the menu, store details,
+           and customer reviews, helping users easily explore products and place orders..</p>
+        <div class="project-tools">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Firebase</span><span>Google Maps API</span>
+        </div>
+        <div class="project-actions">
+          <a href="#" class="btn live-demo-btn" data-demo="https://markonde.github.io/projectmark4.2/">Live Demo</a>
+          <a href="https://markonde.github.io/projectmark4.2/" class="btn secondary" target="_blank">Code</a>
+        </div>
+      </div>
+      <div class="glass project-card">
+        <img src="project4.jpg" alt="Project 4">
+        <h3>Responsive Blog</h3>
+        <p>A sleek, responsive blog landing page built with HTML and CSS,
+       featuring animated gradients, glassmorphism, and parallax effects. Includes sections for featured posts, about, newsletter, and testimonials—all with smooth scroll animations.
+        Ideal for creative or tech-focused blogs seeking a modern aesthetic.<p>
+        <div class="project-tools">
+          <span>HTML</span><span>CSS</span>
+        </div>
+        <div class="project-actions">
+          <a href="#" class="btn live-demo-btn" data-demo="https://markonde.github.io/modern-blog-landing/">Live Demo</a>
+          <a href="https://markonde.github.io/modern-blog-landing/" class="btn secondary" target="_blank">Code</a>
+        </div>
+      </div>
+      <div class="glass project-card">
+        <img src="project5.jpg" alt="Project 5">
+        <h3>Weather App</h3>
+        <p>A cyber-themed Philippines Weather App with matrix-style animation and dark neon UI. Users can search weather by city or auto-locate via GPS.
+          It features dynamic weather data, animated feedback, and a Leaflet map for geolocation visualization.</p>
+        <div class="project-tools">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+        <div class="project-actions">
+          <a href="#" class="btn live-demo-btn" data-demo="https://markonde.github.io/weather-app/">Live Demo</a>
+          <a href="https://markonde.github.io/weather-app/" class="btn secondary" target="_blank">Code</a>
+        </div>
+      </div>
+      <div class="glass project-card">
+        <img src="project6.jpg" alt="Project 6">
+        <h3>Quiz Game</h3>
+        <p>A responsive, interactive quiz game built with HTML, CSS, and JavaScript that tests users with multiple-choice questions on various topics such as general knowledge and web development.
+           The app features a timer, score tracking, sound effects, and smooth transitions for an engaging user experience..</p>
+        <div class="project-tools">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+        <div class="project-actions">
+          <a href="#" class="btn live-demo-btn" data-demo="https://markonde.github.io/quiz-game/">Live Demo</a>
+          <a href="https://markonde.github.io/quiz-game/" class="btn secondary" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies / Skills Section -->
+  <section id="technologies" class="glass-tech-section">
+    <h2>Technologies</h2>
+    <div class="glass-tech-grid">
+      <div class="glass-tech-card">
+        <span class="tech-icon html"><i class="fab fa-html5"></i></span>
+        <h3>HTML5</h3>
+        <p>Semantic markup and accessibility.</p>
+      </div>
+      <div class="glass-tech-card">
+        <span class="tech-icon css"><i class="fab fa-css3-alt"></i></span>
+        <h3>CSS3</h3>
+        <p>Responsive layouts & animations.</p>
+      </div>
+      <div class="glass-tech-card">
+        <span class="tech-icon js"><i class="fab fa-js-square"></i></span>
+        <h3>JavaScript</h3>
+        <p>Interactivity & dynamic content.</p>
+      </div>
+      <div class="glass-tech-card">
+        <span class="tech-icon github"><i class="fab fa-github"></i></span>
+        <h3>Git & GitHub</h3>
+        <p>Version control & collaboration.</p>
+      </div>
+      <div class="glass-tech-card">
+        <span class="tech-icon figma"><i class="fab fa-figma"></i></span>
+        <h3>Figma</h3>
+        <p>UI/UX prototyping & design systems.</p>
+      </div>
+    </div>
+    
+
+  </section>
+
+  <!-- Contact Section -->
+<section id="contact" class="glass contact-section">
+  <h2>Contact</h2>
+  <form id="contact-form" action="https://formsubmit.co/markrommelonde@gmail.com" method="POST" autocomplete="off">
+    <!-- Disable captcha -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Optional: Redirect after submission -->
+    <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+    <!-- Form fields -->
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+
+  <!-- Contact Info -->
+  <div class="contact-info">
+    <a href="mailto:markrommelonde@gmail.com"><i class="fas fa-envelope"></i> markrommelonde@gmail.com</a>
+    <a href="https://github.com/markonde" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+</section>
+
+  <footer>
+    <p>&copy; 2025 Mark Onde. Coded with <span class="heart">♥</span>. <a href="https://github.com/markonde/portfolio" target="_blank">GitHub</a></p>
+  </footer>
+
+  <!-- Modal Prompt for Live Demo -->
+  <div id="live-demo-modal" class="modal-prompt">
+    <div class="modal-content">
+      <span class="close-modal" id="close-demo-modal">&times;</span>
+      <h3>Leaving Portfolio</h3>
+      <p>You are about to visit the live demo.<br>
+      This will open in a new tab.<br>
+      <b>Continue?</b></p>
+      <div class="modal-actions">
+        <button id="confirm-demo" class="btn">Continue</button>
+        <button id="cancel-demo" class="btn secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
